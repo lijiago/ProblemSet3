@@ -5,7 +5,7 @@ mountain = "Denali"
 nickname = '"Mt. McKinley"' 
 elevation = 20322 
 
-print (mountain + ", formerly \nknown as " + nickname + ", \nis " + str(elevation) + "' above sea level.")
+print (mountain + ", formerly \nknown as " + nickname + " \nis " + str(elevation) + "' above sea level.")
 
 
 #%% Task 2 - Lists and Iteration
@@ -28,7 +28,7 @@ user_numbers = []
 for i in range(3):
     user_input=int(input("Enter an integer:"))
     user_numbers.append(user_input)
-user_numbers.sort()
+    user_numbers.sort()
 print(user_numbers[-1])
 
 # %% Task 3 - Challenge
@@ -38,7 +38,7 @@ user_numbers = []
 for i in range(3):
     user_input=int(input("Enter an integer:"))
     user_numbers.append(user_input)
-user_numbers.sort(reverse=True)
+    user_numbers.sort(reverse=True)
 print(user_numbers)
 
  
@@ -98,11 +98,10 @@ for lineString in lineList[1:]:
 vesselID = "258799000"
 vesselCountry = vesselDict[vesselID]
 
-
 print("Vessel #" + str(vesselID) + " flies the flag of " + vesselCountry)
 
 
-#Task 5 
+#%%Task 5 
 #Create a Python file object, i.e., a link to the file's contents
 fileObj2 = open(file='data/raw/loitering_events_20180723.csv',mode='r')
 
@@ -138,20 +137,17 @@ for lineString2 in lineList2[1:]:
     endlong = float(lineData2[4])
 
     #check if the event crosses the equator; and check if starting longitude falls between 165 and 170E
+    
     if startlat < 0 and endlat > 0 and 165<startlong<170: 
-            print(int(mmsi))
-            print(vesselDict[int(mmsi)])
-
+    # using the value of the transshipment_mmsi to query the vesselsDict created above to print the vessel’s mmsi and its fleet.
+         print("Vessel #" + str(mmsi) + " flies the flag of " + str(vesselDict[mmsi]))   
+    #else: 
+       # print("No vessels met criteria")
+    #else startlat < 0 and endlat > 0 and 165<startlong<170:
+       # print("No vessels met criteria")
  
 
-
-   # if cross_equator and in_long_range:
-      # print(mmsi)
-      
-       
-    
         
        
 
-       # print("Vessel #" + str(fleet) + " flies the flag of " + vesselDict)
 
