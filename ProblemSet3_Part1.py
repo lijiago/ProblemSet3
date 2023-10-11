@@ -131,20 +131,27 @@ for lineString2 in lineList2[1:]:
     lineData2=lineString2.split(",")
 
     #storing values as variables
-    mmsi = float(lineData2[0])
+    mmsi = (lineData2[0])
     startlat = float(lineData2[1])
     startlong = float(lineData2[2])
     endlat = float(lineData2[3])
-    endlat = float(lineData2[4])
+    endlong = float(lineData2[4])
 
-    #check if the event crosses the equator
-    cross_equator = startlat < 0 and endlat > 0
+    #check if the event crosses the equator; and check if starting longitude falls between 165 and 170E
+    if startlat < 0 and endlat > 0 and 165<startlong<170: 
+            print(int(mmsi))
+            print(vesselDict[int(mmsi)])
 
-    #check if starting longitude falls between 165 and 170E
-    in_long_range = 165 < startlong <170
+ 
 
-    if cross_equator and in_long_range:
-        if 
 
-        print("Vessel #" + str(fleet) + " flies the flag of " + vesselDict)
+   # if cross_equator and in_long_range:
+      # print(mmsi)
+      
+       
+    
+        
+       
+
+       # print("Vessel #" + str(fleet) + " flies the flag of " + vesselDict)
 
